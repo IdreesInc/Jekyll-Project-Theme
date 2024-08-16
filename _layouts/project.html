@@ -21,13 +21,13 @@
         <div id="subtitle">{{ page.subtitle }}</div>
         <div id="links">
             {{ content }}
-            <!-- <div class="link"><a href="https://apps.apple.com/app/id6462700419">download it here</a></div>
-            <div class="link"><a href="https://chrome.google.com/webstore/detail/mutable/daniknejbbnjhfmcgolfpaedkpcfkaop">source code</a></div>
-            <div class="link"><a href="https://microsoftedge.microsoft.com/addons/detail/mutable/eljpclpdfpmlicjlldnfeehfpfhljgbf">in the press</a></div>
-            <div class="link"><a href="https://addons.mozilla.org/en-US/firefox/addon/mutable/">firefox extension</a></div> -->
         </div>
-        <div id="github"><a href="{{ page.source_code }}" target="_blank">{{ page.title }} is open source, click here for the good stuff!</a></div>
-        <div id="annotation">{{ page.annotation }}</div>
+        {% if page.source_code %}
+            <div id="github"><a href="{{ page.source_code }}" target="_blank">{{ page.title }} is open source, click here for the good stuff!</a></div>
+        {% endif %}
+        {% if page.annotation %}
+            <div id="annotation">{{ page.annotation }}</div>
+        {% endif %}
         <div id="me">Made with ❤️ by <a href="https://idreesinc.com" target="_blank">Idrees</a></div>
     </div>
 </body>
